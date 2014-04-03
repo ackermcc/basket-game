@@ -7,6 +7,7 @@
 //
 
 #import "BasketSetupViewController.h"
+#import "RoundViewController.h"
 
 @interface BasketSetupViewController ()
 @property (nonatomic) NSInteger playerNumber;
@@ -70,18 +71,23 @@
             self.playerNumber = self.playerNumber + 1;
             self.navigationItem.title = [NSString stringWithFormat:@"Player %d", self.playerNumber];
         } else {
-            NSLog(@"Done!");
+            [self performSegueWithIdentifier:@"beginRound" sender:self];
         }
     } else {
         if (self.playerNumber < self.playerCount) {
             self.playerNumber = self.playerNumber + 1;
             self.navigationItem.title = [NSString stringWithFormat:@"Player %d", self.playerNumber];
         } else {
-            NSLog(@"Done!");
+            [self performSegueWithIdentifier:@"beginRound" sender:self];
         }
     }
     
     NSLog(@"This is the basket: %@", self.basket);
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    RoundViewController *destination = [segue destinationViewController];
+    destination.basket = self.basket;
 }
 
 - (void)didReceiveMemoryWarning
