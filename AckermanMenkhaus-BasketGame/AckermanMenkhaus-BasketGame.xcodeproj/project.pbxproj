@@ -21,6 +21,7 @@
 		F365D69F18ECBFA700018740 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F365D68118ECBFA600018740 /* UIKit.framework */; };
 		F365D6A718ECBFA700018740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F365D6A518ECBFA700018740 /* InfoPlist.strings */; };
 		F365D6A918ECBFA700018740 /* AckermanMenkhaus_BasketGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F365D6A818ECBFA700018740 /* AckermanMenkhaus_BasketGameTests.m */; };
+		F365D6F718EE103300018740 /* BasketSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F365D6F618EE103300018740 /* BasketSetupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F365D6A418ECBFA700018740 /* AckermanMenkhaus-BasketGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AckermanMenkhaus-BasketGameTests-Info.plist"; sourceTree = "<group>"; };
 		F365D6A618ECBFA700018740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F365D6A818ECBFA700018740 /* AckermanMenkhaus_BasketGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AckermanMenkhaus_BasketGameTests.m; sourceTree = "<group>"; };
+		F365D6F518EE103300018740 /* BasketSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasketSetupViewController.h; sourceTree = "<group>"; };
+		F365D6F618EE103300018740 /* BasketSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasketSetupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				F365D68C18ECBFA600018740 /* AppDelegate.h */,
 				F365D68D18ECBFA600018740 /* AppDelegate.m */,
 				F365D68F18ECBFA600018740 /* Main.storyboard */,
+				F365D6F518EE103300018740 /* BasketSetupViewController.h */,
+				F365D6F618EE103300018740 /* BasketSetupViewController.m */,
 				F365D69218ECBFA600018740 /* ViewController.h */,
 				F365D69318ECBFA600018740 /* ViewController.m */,
 				F365D69518ECBFA700018740 /* Images.xcassets */,
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F365D6F718EE103300018740 /* BasketSetupViewController.m in Sources */,
 				F365D69418ECBFA600018740 /* ViewController.m in Sources */,
 				F365D68E18ECBFA600018740 /* AppDelegate.m in Sources */,
 				F365D68A18ECBFA600018740 /* main.m in Sources */,
@@ -379,6 +385,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AckermanMenkhaus-BasketGame/AckermanMenkhaus-BasketGame-Prefix.pch";
 				INFOPLIST_FILE = "AckermanMenkhaus-BasketGame/AckermanMenkhaus-BasketGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +399,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AckermanMenkhaus-BasketGame/AckermanMenkhaus-BasketGame-Prefix.pch";
 				INFOPLIST_FILE = "AckermanMenkhaus-BasketGame/AckermanMenkhaus-BasketGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +464,7 @@
 				F365D6AE18ECBFA700018740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F365D6AF18ECBFA700018740 /* Build configuration list for PBXNativeTarget "AckermanMenkhaus-BasketGameTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +473,7 @@
 				F365D6B118ECBFA700018740 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

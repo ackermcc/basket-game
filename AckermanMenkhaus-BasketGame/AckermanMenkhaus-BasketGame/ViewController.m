@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "BasketSetupViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic) NSInteger playerCount;
 @end
 
 @implementation ViewController
@@ -24,6 +25,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)fourPlayers:(id)sender {
+    self.playerCount = 4;
+    [self performSegueWithIdentifier:@"beginGame" sender:self];
+}
+
+-(IBAction)sixPlayers:(id)sender {
+    self.playerCount = 6;
+    [self performSegueWithIdentifier:@"beginGame" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    BasketSetupViewController *destination = [segue destinationViewController];
+    destination.playerCount = self.playerCount;
 }
 
 @end
