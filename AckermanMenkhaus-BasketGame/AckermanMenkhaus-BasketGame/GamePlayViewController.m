@@ -1,18 +1,18 @@
 //
-//  RoundViewController.m
+//  GamePlayViewController.m
 //  AckermanMenkhaus-BasketGame
 //
 //  Created by Chad Ackerman on 4/3/14.
 //  Copyright (c) 2014 UC. All rights reserved.
 //
 
-#import "RoundViewController.h"
 #import "GamePlayViewController.h"
-@interface RoundViewController ()
-@property (nonatomic) NSMutableArray *replaceArray;
+
+@interface GamePlayViewController ()
+
 @end
 
-@implementation RoundViewController
+@implementation GamePlayViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,21 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.navigationItem setHidesBackButton:YES];
-    
-    self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"kate is dumb", @"who brought her here", nil];
-    self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.replaceArray.count];
-}
-
--(IBAction)startGame:(id)sender {
-    [self performSegueWithIdentifier:@"startGame" sender:self];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    GamePlayViewController *destination = [segue destinationViewController];
-    destination.basket = self.replaceArray;
-    destination.teamNumber = self.teamNumber.text;
+    NSLog(@"teamName: %@  basket: %@",self.teamNumber, self.basket); 
 }
 
 - (void)didReceiveMemoryWarning
