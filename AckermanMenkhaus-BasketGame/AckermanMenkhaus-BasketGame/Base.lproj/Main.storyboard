@@ -228,6 +228,9 @@
                                 <state key="normal" title="Correct">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="correctWord:" destination="MMZ-XX-JMg" eventType="touchUpInside" id="xjM-y6-eZm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lj-vo-vZR">
                                 <rect key="frame" x="20" y="211" width="89" height="30"/>
@@ -236,13 +239,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="68S-dN-g8e">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68S-dN-g8e">
                                 <rect key="frame" x="15" y="357" width="280" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="activeWord" destination="1hH-Qg-w0t" id="T1X-z0-e4Z"/>
+                        <outlet property="gameTimer" destination="68S-dN-g8e" id="QFq-Wz-a4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zw-pY-XM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

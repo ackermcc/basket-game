@@ -12,4 +12,12 @@
 
 @property (nonatomic) NSMutableArray *basket;
 @property (nonatomic) NSString *teamNumber; 
+@property (weak, nonatomic) IBOutlet UILabel *activeWord;
+@property (nonatomic) NSMutableArray *teamOneCorrectAnswers;
+@property (nonatomic) NSMutableArray *teamTwoCorrectAnswers;
+@property (weak, nonatomic) IBOutlet UIProgressView *gameTimer;
+
+
+
+
 @end
