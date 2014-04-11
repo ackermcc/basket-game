@@ -249,9 +249,11 @@
                     <connections>
                         <outlet property="activeWord" destination="1hH-Qg-w0t" id="T1X-z0-e4Z"/>
                         <outlet property="gameTimer" destination="68S-dN-g8e" id="QFq-Wz-a4N"/>
+                        <segue destination="ZHB-6F-F5x" kind="unwind" identifier="returnToRound" unwindAction="unwindToRound:" id="Bxw-qw-dJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zw-pY-XM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZHB-6F-F5x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1505" y="112"/>
         </scene>

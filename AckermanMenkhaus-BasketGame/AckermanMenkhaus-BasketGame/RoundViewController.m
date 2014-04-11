@@ -9,7 +9,7 @@
 #import "RoundViewController.h"
 #import "GamePlayViewController.h"
 @interface RoundViewController ()
-@property (nonatomic) NSMutableArray *replaceArray;
+
 @end
 
 @implementation RoundViewController
@@ -32,6 +32,8 @@
     self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"kate is dumb", @"who brought her here", nil];
     self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.replaceArray.count];
 }
+
+- (IBAction)unwindToRound:(UIStoryboardSegue *)unwindSegue {}
 
 -(IBAction)startGame:(id)sender {
     [self performSegueWithIdentifier:@"startGame" sender:self];

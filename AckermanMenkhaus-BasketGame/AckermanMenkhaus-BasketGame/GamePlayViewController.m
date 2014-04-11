@@ -7,6 +7,7 @@
 //
 
 #import "GamePlayViewController.h"
+#import "RoundViewController.h"
 
 @interface GamePlayViewController ()
 @property (nonatomic) NSUInteger activeWordIndex;
@@ -27,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.correctAnswers = [[NSMutableArray alloc] init];
 
     [self shuffle:self.basket];
     
@@ -50,16 +53,15 @@
 }
 
 - (IBAction)correctWord:(id)sender {
-    if ([self.teamNumber isEqualToString:@"Team 1"]) {
-        //Move correct word from basket to team array
-        [self.teamOneCorrectAnswers addObject:[self.basket objectAtIndex:self.activeWordIndex]];
-        [self.basket removeObjectAtIndex:self.activeWordIndex];
-        
-        //Choose next word
-        self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
-        
-        NSLog(@"index: %d, next word: %@", self.activeWordIndex, self.basket);
-    }
+    //Move correct word from basket to team array
+    [self.correctAnswers addObject:[self.basket objectAtIndex:0]];
+    
+    [self.basket removeObjectAtIndex:self.activeWordIndex];
+    
+    //Choose next word
+    self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
+    
+    NSLog(@"next word: %@", self.correctAnswers);
 }
 
 -(void) updateTimer {
@@ -74,7 +76,28 @@
 }
 
 -(void)endTurn {
-    NSLog(@"time is up!!");
+    UIAlertView *scoreAlert = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat:@"You got %d correct!", [self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+    
+    [scoreAlert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [self performSegueWithIdentifier:@"returnToRound" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"returnToRound"]) {
+        RoundViewController *destination = [segue destinationViewController];
+        destination.replaceArray = self.basket;
+        destination.wordsRemaining.text = [NSString stringWithFormat:@"%d",[self.basket count]];
+        if ([self.teamNumber isEqualToString:@"Team 1"]) {
+            destination.teamOneScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count]];
+            destination.teamNumber.text = @"Team 2";
+        } else if ([self.teamNumber isEqualToString:@"Team 2"]) {
+            destination.teamTwoScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count]];
+            destination.teamNumber.text = @"Team 1";
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

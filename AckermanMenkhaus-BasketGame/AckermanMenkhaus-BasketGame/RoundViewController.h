@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *teamNumber;
 
 @property (nonatomic) NSMutableArray *basket;
+@property (nonatomic) NSMutableArray *replaceArray;
 
 @end

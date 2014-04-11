@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GamePlayViewController : UIViewController
+@interface GamePlayViewController : UIViewController <UIAlertViewDelegate>
 
 @property (nonatomic) NSMutableArray *basket;
 @property (nonatomic) NSString *teamNumber; 
 @property (weak, nonatomic) IBOutlet UILabel *activeWord;
-@property (nonatomic) NSMutableArray *teamOneCorrectAnswers;
-@property (nonatomic) NSMutableArray *teamTwoCorrectAnswers;
+@property (nonatomic) NSMutableArray *correctAnswers;
 @property (weak, nonatomic) IBOutlet UIProgressView *gameTimer;
 
 
