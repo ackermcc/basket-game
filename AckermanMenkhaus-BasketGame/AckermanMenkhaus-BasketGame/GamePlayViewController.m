@@ -49,19 +49,28 @@
         NSInteger n = arc4random_uniform(nElements) + i;
         [shuffleArray exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
-    NSLog(@"new order: %@", shuffleArray);
 }
 
 - (IBAction)correctWord:(id)sender {
-    //Move correct word from basket to team array
-    [self.correctAnswers addObject:[self.basket objectAtIndex:0]];
-    
-    [self.basket removeObjectAtIndex:self.activeWordIndex];
-    
-    //Choose next word
-    self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
-    
-    NSLog(@"next word: %@", self.correctAnswers);
+    if (self.basket.count > 1) {
+        //Move correct word from basket to team array
+        [self.correctAnswers addObject:[self.basket objectAtIndex:0]];
+        
+        [self.basket removeObjectAtIndex:self.activeWordIndex];
+        
+        //Choose next word
+        self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
+    } else {
+        [self.correctAnswers addObject:[self.basket objectAtIndex:0]];
+        [self.basket removeObjectAtIndex:self.activeWordIndex];
+        
+        NSLog(@"correct answers: %@", self.correctAnswers);
+        
+        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:@"The basket is empty!" message:[NSString stringWithFormat:@"You got %d correct!", [self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        
+        [self.gameClock invalidate];
+        [emptyBasket show];
+    }
 }
 
 -(void) updateTimer {
@@ -89,12 +98,12 @@
     if ([segue.identifier isEqualToString:@"returnToRound"]) {
         RoundViewController *destination = [segue destinationViewController];
         destination.replaceArray = self.basket;
-        destination.wordsRemaining.text = [NSString stringWithFormat:@"%d",[self.basket count]];
+        destination.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d",[self.basket count]];
         if ([self.teamNumber isEqualToString:@"Team 1"]) {
-            destination.teamOneScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count]];
+            destination.teamOneScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count] + [destination.teamOneScore.text integerValue]];
             destination.teamNumber.text = @"Team 2";
         } else if ([self.teamNumber isEqualToString:@"Team 2"]) {
-            destination.teamTwoScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count]];
+            destination.teamTwoScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count] + [destination.teamTwoScore.text integerValue]];
             destination.teamNumber.text = @"Team 1";
         }
     }
