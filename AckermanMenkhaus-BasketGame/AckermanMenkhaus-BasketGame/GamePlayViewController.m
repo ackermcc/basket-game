@@ -38,6 +38,8 @@
     self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
     
     self.gameClock = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    
+    self.roundOver = NO;
 }
 
 - (void)shuffle:(NSMutableArray *)shuffleArray
@@ -68,6 +70,8 @@
         
         UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:@"The basket is empty!" message:[NSString stringWithFormat:@"You got %d correct!", [self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
         
+        self.roundOver = YES;
+        
         [self.gameClock invalidate];
         [emptyBasket show];
     }
@@ -97,14 +101,19 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"returnToRound"]) {
         RoundViewController *destination = [segue destinationViewController];
-        destination.replaceArray = self.basket;
+        destination.gamePlayBasket = self.basket;
         destination.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d",[self.basket count]];
+        
         if ([self.teamNumber isEqualToString:@"Team 1"]) {
             destination.teamOneScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count] + [destination.teamOneScore.text integerValue]];
             destination.teamNumber.text = @"Team 2";
         } else if ([self.teamNumber isEqualToString:@"Team 2"]) {
             destination.teamTwoScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count] + [destination.teamTwoScore.text integerValue]];
             destination.teamNumber.text = @"Team 1";
+        }
+        
+        if (self.roundOver == YES) {
+            destination.roundOver = self.roundOver;
         }
     }
 }

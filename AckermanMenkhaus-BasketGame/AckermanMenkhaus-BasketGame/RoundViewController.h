@@ -16,5 +16,8 @@
 
 @property (nonatomic) NSMutableArray *basket;
 @property (nonatomic) NSMutableArray *replaceArray;
+@property (nonatomic) NSMutableArray *gamePlayBasket;
+
+@property (nonatomic) BOOL roundOver;
 
 @end

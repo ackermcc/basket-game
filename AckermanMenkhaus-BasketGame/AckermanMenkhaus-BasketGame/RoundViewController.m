@@ -9,7 +9,7 @@
 #import "RoundViewController.h"
 #import "GamePlayViewController.h"
 @interface RoundViewController ()
-
+@property (nonatomic) NSUInteger roundNumber;
 @end
 
 @implementation RoundViewController
@@ -23,14 +23,33 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    if (self.roundOver == YES) {
+        self.gamePlayBasket = [self.basket mutableCopy];
+        
+        if (self.roundNumber == 1) {
+            self.roundNumber ++;
+            self.navigationItem.title = [NSString stringWithFormat:@"Round %d", self.roundNumber];
+        }
+        
+        self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.gamePlayBasket.count];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.navigationItem setHidesBackButton:YES];
     
+    self.gamePlayBasket = [self.basket mutableCopy];
+    self.roundNumber = 1;
+    self.navigationItem.title = [NSString stringWithFormat:@"Round %d", self.roundNumber];
+    
+#warning Remove before deployment
     self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"kate is dumb", @"who brought her here", nil];
-    self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.replaceArray.count];
+    
+    self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.gamePlayBasket.count];
 }
 
 - (IBAction)unwindToRound:(UIStoryboardSegue *)unwindSegue {}
@@ -41,7 +60,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     GamePlayViewController *destination = [segue destinationViewController];
-    destination.basket = self.replaceArray;
+    destination.basket = self.gamePlayBasket;
     destination.teamNumber = self.teamNumber.text;
 }
 

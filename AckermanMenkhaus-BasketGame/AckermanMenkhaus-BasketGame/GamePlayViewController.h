@@ -16,7 +16,7 @@
 @property (nonatomic) NSMutableArray *correctAnswers;
 @property (weak, nonatomic) IBOutlet UIProgressView *gameTimer;
 
-
+@property (nonatomic) BOOL roundOver;
 
 
 @end
