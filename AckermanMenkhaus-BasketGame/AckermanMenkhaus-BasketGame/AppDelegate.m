@@ -7,12 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+BasketColors.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"AvenirNext-Regular" size:18], NSFontAttributeName,
+                                [UIColor teal], NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTintColor:[UIColor teal]];
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
     return YES;
 }
 							

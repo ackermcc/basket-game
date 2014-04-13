@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BasketSetupViewController.h"
+#import "UIColor+BasketColors.h"
 
 @interface ViewController ()
 @property (nonatomic) NSInteger playerCount;
@@ -19,6 +20,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.btnFourPlayer.backgroundColor = [UIColor teal];
+    self.btnSixPlayer.backgroundColor = [UIColor red];
+    self.btnShare.backgroundColor = [UIColor purple];
 }
 
 - (void)didReceiveMemoryWarning

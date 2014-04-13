@@ -15,5 +15,6 @@
 
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) NSMutableArray *basket;
+@property (weak, nonatomic) IBOutlet UIButton *btnNextPlayer;
 
 @end

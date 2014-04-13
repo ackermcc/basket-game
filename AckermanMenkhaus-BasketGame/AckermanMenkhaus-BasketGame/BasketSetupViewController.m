@@ -8,6 +8,8 @@
 
 #import "BasketSetupViewController.h"
 #import "RoundViewController.h"
+#import "UIColor+BasketColors.h"
+#import <UIView+DCAnimationKit.h>
 
 @interface BasketSetupViewController ()
 @property (nonatomic) NSInteger playerNumber;
@@ -36,6 +38,9 @@
     self.inputTwo.delegate = self;
     self.inputThree.delegate = self;
     
+    self.view.backgroundColor = [UIColor teal];
+    [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+    
     self.playerNumber = 1;
     self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
 }
@@ -62,24 +67,23 @@
     [self.basket addObject:self.inputTwo.text];
     [self.basket addObject:self.inputThree.text];
     
+//    [self.inputOne drop:^(void){
+//        [self.inputTwo drop:^(void){
+//            [self.inputThree drop:^(void){
+//                
+//            }];
+//        }];
+//    }];
+    
     self.inputOne.text = @"";
     self.inputTwo.text = @"";
     self.inputThree.text = @"";
     
-    if (self.playerCount == 4) {
-        if (self.playerNumber < self.playerCount) {
-            self.playerNumber = self.playerNumber + 1;
-            self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
-        } else {
-            [self performSegueWithIdentifier:@"beginRound" sender:self];
-        }
+    if (self.playerNumber < self.playerCount) {
+        self.playerNumber = self.playerNumber + 1;
+        self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
     } else {
-        if (self.playerNumber < self.playerCount) {
-            self.playerNumber = self.playerNumber + 1;
-            self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
-        } else {
-            [self performSegueWithIdentifier:@"beginRound" sender:self];
-        }
+        [self performSegueWithIdentifier:@"beginRound" sender:self];
     }
     
     NSLog(@"This is the basket: %@", self.basket);
