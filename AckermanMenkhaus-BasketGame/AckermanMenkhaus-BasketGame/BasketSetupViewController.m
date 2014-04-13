@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"Player Count: %d", self.playerCount);
+    NSLog(@"Player Count: %ld", (long)self.playerCount);
     self.basket = [NSMutableArray new];
     
     self.inputOne.delegate = self;
@@ -37,7 +37,7 @@
     self.inputThree.delegate = self;
     
     self.playerNumber = 1;
-    self.navigationItem.title = [NSString stringWithFormat:@"Player %d", self.playerNumber];
+    self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -69,14 +69,14 @@
     if (self.playerCount == 4) {
         if (self.playerNumber < self.playerCount) {
             self.playerNumber = self.playerNumber + 1;
-            self.navigationItem.title = [NSString stringWithFormat:@"Player %d", self.playerNumber];
+            self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
         } else {
             [self performSegueWithIdentifier:@"beginRound" sender:self];
         }
     } else {
         if (self.playerNumber < self.playerCount) {
             self.playerNumber = self.playerNumber + 1;
-            self.navigationItem.title = [NSString stringWithFormat:@"Player %d", self.playerNumber];
+            self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
         } else {
             [self performSegueWithIdentifier:@"beginRound" sender:self];
         }

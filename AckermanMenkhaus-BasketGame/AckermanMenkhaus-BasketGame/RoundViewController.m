@@ -27,12 +27,10 @@
     if (self.roundOver == YES) {
         self.gamePlayBasket = [self.basket mutableCopy];
         
-        if (self.roundNumber == 1) {
-            self.roundNumber ++;
-            self.navigationItem.title = [NSString stringWithFormat:@"Round %d", self.roundNumber];
-        }
+        self.roundNumber ++;
+        self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
         
-        self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.gamePlayBasket.count];
+        self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
     }
 }
 
@@ -44,12 +42,12 @@
     
     self.gamePlayBasket = [self.basket mutableCopy];
     self.roundNumber = 1;
-    self.navigationItem.title = [NSString stringWithFormat:@"Round %d", self.roundNumber];
+    self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
     
 #warning Remove before deployment
     self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"kate is dumb", @"who brought her here", nil];
     
-    self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d", self.gamePlayBasket.count];
+    self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
 }
 
 - (IBAction)unwindToRound:(UIStoryboardSegue *)unwindSegue {}

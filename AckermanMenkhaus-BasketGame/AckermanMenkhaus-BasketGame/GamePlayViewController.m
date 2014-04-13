@@ -47,8 +47,8 @@
     NSUInteger count = [shuffleArray count];
     for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.
-        NSInteger nElements = count - i;
-        NSInteger n = arc4random_uniform(nElements) + i;
+        NSUInteger nElements = count - i;
+        NSUInteger n = arc4random_uniform(nElements) + i;
         [shuffleArray exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
 }
@@ -68,7 +68,7 @@
         
         NSLog(@"correct answers: %@", self.correctAnswers);
         
-        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:@"The basket is empty!" message:[NSString stringWithFormat:@"You got %d correct!", [self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:@"The basket is empty!" message:[NSString stringWithFormat:@"You got %lu correct!", (unsigned long)[self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
         
         self.roundOver = YES;
         
@@ -89,7 +89,7 @@
 }
 
 -(void)endTurn {
-    UIAlertView *scoreAlert = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat:@"You got %d correct!", [self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+    UIAlertView *scoreAlert = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat:@"You got %lu correct!", (unsigned long)[self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
     
     [scoreAlert show];
 }
@@ -102,14 +102,14 @@
     if ([segue.identifier isEqualToString:@"returnToRound"]) {
         RoundViewController *destination = [segue destinationViewController];
         destination.gamePlayBasket = self.basket;
-        destination.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %d",[self.basket count]];
+        destination.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu",(unsigned long)[self.basket count]];
         
-        if ([self.teamNumber isEqualToString:@"Team 1"]) {
-            destination.teamOneScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count] + [destination.teamOneScore.text integerValue]];
-            destination.teamNumber.text = @"Team 2";
-        } else if ([self.teamNumber isEqualToString:@"Team 2"]) {
-            destination.teamTwoScore.text = [NSString stringWithFormat:@"%d", [self.correctAnswers count] + [destination.teamTwoScore.text integerValue]];
-            destination.teamNumber.text = @"Team 1";
+        if ([self.teamNumber isEqualToString:@"Blue Team"]) {
+            destination.teamOneScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [destination.teamOneScore.text integerValue]];
+            destination.teamNumber.text = @"Orange Team";
+        } else if ([self.teamNumber isEqualToString:@"Orange Team"]) {
+            destination.teamTwoScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [destination.teamTwoScore.text integerValue]];
+            destination.teamNumber.text = @"Blue Team";
         }
         
         if (self.roundOver == YES) {
