@@ -26,6 +26,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -67,6 +72,9 @@
         
         //Choose next word
         self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
+    } else if (self.basket.count == 1 && self.roundNumber == 3){
+        [self performSegueWithIdentifier:@"gameOver" sender:self];
+        [self.gameClock invalidate];
     } else {
         [self.correctAnswers addObject:[self.basket objectAtIndex:0]];
         [self.basket removeObjectAtIndex:self.activeWordIndex];
@@ -110,10 +118,18 @@
         destination.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu",(unsigned long)[self.basket count]];
         
         if ([self.teamNumber isEqualToString:@"Blue Team"]) {
-            destination.teamOneScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [destination.teamOneScore.text integerValue]];
+            if ([self.correctAnswers count] == 0) {
+                destination.teamOneScore.text = @"00";
+            } else {
+                destination.teamOneScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [destination.teamOneScore.text integerValue]];
+            }
             destination.teamNumber.text = @"Orange Team";
         } else if ([self.teamNumber isEqualToString:@"Orange Team"]) {
-            destination.teamTwoScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [destination.teamTwoScore.text integerValue]];
+            if ([self.correctAnswers count] == 0) {
+                destination.teamTwoScore.text = @"00";
+            } else {
+                destination.teamTwoScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [destination.teamTwoScore.text integerValue]];
+            }
             destination.teamNumber.text = @"Blue Team";
         }
         

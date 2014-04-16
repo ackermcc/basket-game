@@ -90,6 +90,19 @@
     if (self.playerNumber < self.playerCount) {
         self.playerNumber = self.playerNumber + 1;
         self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
+        
+        if ([self.view.backgroundColor isEqual:[UIColor teal]]) {
+            [UIView animateWithDuration:0.5 animations:^(void){
+                self.view.backgroundColor = [UIColor red];
+                [self.btnNextPlayer setTitleColor:[UIColor red] forState:UIControlStateNormal];
+            }];
+        } else {
+            [UIView animateWithDuration:0.5 animations:^(void){
+                self.view.backgroundColor = [UIColor teal];
+                [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+            }];
+        }
+        
     } else {
         [self performSegueWithIdentifier:@"beginRound" sender:self];
     }

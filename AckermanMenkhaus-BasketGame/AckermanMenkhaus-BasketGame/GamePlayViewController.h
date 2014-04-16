@@ -21,6 +21,7 @@
 
 
 @property (nonatomic) BOOL roundOver;
+@property (nonatomic) NSUInteger roundNumber;
 
 
 @end

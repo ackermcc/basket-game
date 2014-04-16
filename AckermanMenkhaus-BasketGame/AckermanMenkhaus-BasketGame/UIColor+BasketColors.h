@@ -13,5 +13,6 @@
 +(UIColor *)teal;
 +(UIColor *)red;
 +(UIColor *)purple;
++(UIColor *)midGray;
 
 @end

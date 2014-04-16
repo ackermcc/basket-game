@@ -11,7 +11,7 @@
 #import "UIColor+BasketColors.h"
 
 @interface RoundViewController ()
-@property (nonatomic) NSUInteger roundNumber;
+@property (nonatomic) BOOL firstOpen;
 @end
 
 @implementation RoundViewController
@@ -26,13 +26,34 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     if (self.roundOver == YES) {
         self.gamePlayBasket = [self.basket mutableCopy];
-        
         self.roundNumber ++;
         self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
         
         self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
+        if (self.roundNumber == 2) {
+            self.roundDescription.text = @"Use GENSTURES to describe the word or phrase";
+        } else if (self.roundNumber == 3) {
+            self.roundDescription.text = @"Use ONE WORD to describe the word or phrase";
+        }
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    if (self.firstOpen == NO) {
+        if ([self.view.backgroundColor isEqual:[UIColor teal]]) {
+            [UIView animateWithDuration:0.5 animations:^(void){
+                self.view.backgroundColor = [UIColor red];
+                [self.btnStartGame setTitleColor:[UIColor red] forState:UIControlStateNormal];
+            }];
+        } else {
+            [UIView animateWithDuration:0.5 animations:^(void){
+                self.view.backgroundColor = [UIColor teal];
+                [self.btnStartGame setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+            }];
+        }
     }
 }
 
@@ -45,9 +66,13 @@
     self.gamePlayBasket = [self.basket mutableCopy];
     self.roundNumber = 1;
     self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
+    self.teamTwoScore.backgroundColor = [UIColor red];
+    self.teamOneScore.backgroundColor = [UIColor teal];
     
     [self.btnStartGame setTitleColor:[UIColor teal] forState:UIControlStateNormal];
     self.view.backgroundColor = [UIColor teal];
+    
+    self.firstOpen = YES;
     
 #warning Remove before deployment
     self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"chad is dumb", @"who brought her here", nil];
@@ -59,12 +84,14 @@
 
 -(IBAction)startGame:(id)sender {
     [self performSegueWithIdentifier:@"startGame" sender:self];
+    self.firstOpen = NO;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     GamePlayViewController *destination = [segue destinationViewController];
     destination.basket = self.gamePlayBasket;
     destination.teamNumber = self.teamNumber.text;
+    destination.roundNumber = self.roundNumber;
 }
 
 - (void)didReceiveMemoryWarning

@@ -22,5 +22,7 @@
 @property (nonatomic) NSMutableArray *gamePlayBasket;
 
 @property (nonatomic) BOOL roundOver;
+@property (nonatomic) NSUInteger roundNumber;
 
+@property (weak, nonatomic) IBOutlet UITextView *roundDescription;
 @end

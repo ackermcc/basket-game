@@ -19,5 +19,8 @@
 +(UIColor *)purple {
     return [UIColor colorWithRed:89.0/255.0 green:92.0/255.0 blue:161.0/255.0 alpha:1.0];
 }
++(UIColor *)midGray {
+    return [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1.0];
+}
 
 @end

@@ -15,9 +15,9 @@
 {
     // Override point for customization after application launch.
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
-                                                                           fontWithName:@"AvenirNext-Regular" size:18], NSFontAttributeName,
-                                [UIColor teal], NSForegroundColorAttributeName, nil];
-    [[UINavigationBar appearance] setTintColor:[UIColor teal]];
+                                                                           fontWithName:@"AvenirNext-DemiBold" size:18], NSFontAttributeName,
+                                [UIColor midGray], NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTintColor:[UIColor midGray]];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
     return YES;
