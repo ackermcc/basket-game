@@ -16,6 +16,10 @@
 @property (nonatomic) NSMutableArray *correctAnswers;
 @property (weak, nonatomic) IBOutlet UIProgressView *gameTimer;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnCorrectWord;
+@property (weak, nonatomic) IBOutlet UIButton *btnSkipWord;
+
+
 @property (nonatomic) BOOL roundOver;
 
 

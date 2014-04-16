@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *teamTwoScore;
 @property (weak, nonatomic) IBOutlet UILabel *teamNumber;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnStartGame;
+//- (IBAction)startGame:(id)sender;
+
 @property (nonatomic) NSMutableArray *basket;
 @property (nonatomic) NSMutableArray *replaceArray;
 @property (nonatomic) NSMutableArray *gamePlayBasket;

@@ -38,8 +38,16 @@
     self.inputTwo.delegate = self;
     self.inputThree.delegate = self;
     
-    self.view.backgroundColor = [UIColor teal];
-    [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+    if (self.playerCount == 4) {
+        self.view.backgroundColor = [UIColor teal];
+        [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+    } else {
+        self.view.backgroundColor = [UIColor red];
+        [self.btnNextPlayer setTitleColor:[UIColor red] forState:UIControlStateNormal];
+    }
+    
+//    self.view.backgroundColor = [UIColor teal];
+//    [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
     
     self.playerNumber = 1;
     self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];

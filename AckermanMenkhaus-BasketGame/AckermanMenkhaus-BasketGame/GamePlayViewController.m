@@ -8,6 +8,7 @@
 
 #import "GamePlayViewController.h"
 #import "RoundViewController.h"
+#import "UIColor+BasketColors.h"
 
 @interface GamePlayViewController ()
 @property (nonatomic) NSUInteger activeWordIndex;
@@ -28,6 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.btnSkipWord.backgroundColor = [UIColor red];
+    self.btnCorrectWord.backgroundColor = [UIColor teal];
+   
     
     self.correctAnswers = [[NSMutableArray alloc] init];
 

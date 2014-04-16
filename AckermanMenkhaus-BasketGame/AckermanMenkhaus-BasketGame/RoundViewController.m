@@ -8,6 +8,8 @@
 
 #import "RoundViewController.h"
 #import "GamePlayViewController.h"
+#import "UIColor+BasketColors.h"
+
 @interface RoundViewController ()
 @property (nonatomic) NSUInteger roundNumber;
 @end
@@ -44,8 +46,11 @@
     self.roundNumber = 1;
     self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
     
+    [self.btnStartGame setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+    self.view.backgroundColor = [UIColor teal];
+    
 #warning Remove before deployment
-    self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"kate is dumb", @"who brought her here", nil];
+    self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"chad is dumb", @"who brought her here", nil];
     
     self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
 }
@@ -78,5 +83,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
