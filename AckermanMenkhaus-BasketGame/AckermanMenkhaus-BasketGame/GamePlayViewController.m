@@ -63,6 +63,10 @@
     }
 }
 
+- (IBAction)skip:(id)sender {
+    
+}
+
 - (IBAction)correctWord:(id)sender {
     if (self.basket.count > 1) {
         //Move correct word from basket to team array
@@ -81,7 +85,7 @@
         
         NSLog(@"correct answers: %@", self.correctAnswers);
         
-        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:@"The basket is empty!" message:[NSString stringWithFormat:@"You got %lu correct!", (unsigned long)[self.correctAnswers count]] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Round %lul is over", (unsigned long)self.roundNumber] message:[NSString stringWithFormat:@"You got %lu correct!", (unsigned long)[self.correctAnswers count]] delegate:self cancelButtonTitle:@"Next Round" otherButtonTitles:nil, nil];
         
         self.roundOver = YES;
         
