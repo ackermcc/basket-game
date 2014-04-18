@@ -65,6 +65,18 @@
 
 - (IBAction)skip:(id)sender {
     
+    [self moveObjectAtIndex:self.activeWordIndex toIndex:self.basket.count - 1];
+    self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
+    self.btnSkipWord.backgroundColor = [UIColor lightGrayColor];
+    self.btnSkipWord.userInteractionEnabled = NO;
+    
+}
+
+- (void)moveObjectAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
+{
+    id object = [self.basket objectAtIndex:fromIndex];
+    [self.basket removeObjectAtIndex:fromIndex];
+    [self.basket insertObject:object atIndex:toIndex];
 }
 
 - (IBAction)correctWord:(id)sender {
@@ -85,7 +97,7 @@
         
         NSLog(@"correct answers: %@", self.correctAnswers);
         
-        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Round %lul is over", (unsigned long)self.roundNumber] message:[NSString stringWithFormat:@"You got %lu correct!", (unsigned long)[self.correctAnswers count]] delegate:self cancelButtonTitle:@"Next Round" otherButtonTitles:nil, nil];
+        UIAlertView *emptyBasket = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Round %lu is over", (unsigned long)self.roundNumber] message:[NSString stringWithFormat:@"You got %lu correct!", (unsigned long)[self.correctAnswers count]] delegate:self cancelButtonTitle:@"Next Round" otherButtonTitles:nil, nil];
         
         self.roundOver = YES;
         
