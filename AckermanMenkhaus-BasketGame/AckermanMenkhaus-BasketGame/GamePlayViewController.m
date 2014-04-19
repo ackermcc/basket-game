@@ -48,6 +48,9 @@
     self.activeWord.text = [self.basket objectAtIndex:self.activeWordIndex];
     
     self.gameClock = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    self.gameTimer.progressTintColor = [UIColor red];
+    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 22.5f);
+    self.gameTimer.transform = transform;
     
     self.roundOver = NO;
 }
