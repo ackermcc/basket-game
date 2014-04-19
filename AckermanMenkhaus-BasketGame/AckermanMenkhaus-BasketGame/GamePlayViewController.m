@@ -8,6 +8,7 @@
 
 #import "GamePlayViewController.h"
 #import "RoundViewController.h"
+#import "GameOverViewController.h"
 #import "UIColor+BasketColors.h"
 
 @interface GamePlayViewController ()
@@ -154,6 +155,18 @@
         
         if (self.roundOver == YES) {
             destination.roundOver = self.roundOver;
+        }
+    } else if ([segue.identifier isEqualToString:@"gameOver"]){
+        RoundViewController *scores = [[RoundViewController alloc] init];
+        GameOverViewController *destination2 = [segue destinationViewController];
+        
+        if ([self.teamNumber isEqualToString:@"Blue Team"]) {
+            NSLog(@"i made it here with a score %lu", [self.correctAnswers count] + [scores.teamOneScore.text integerValue]);
+            destination2.teamOneScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [scores.teamOneScore.text integerValue]];
+            destination2.teamTwoScore.text = [NSString stringWithFormat:@"%lu", [scores.teamTwoScore.text integerValue]];
+        } else {
+            destination2.teamTwoScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [scores.teamTwoScore.text integerValue]];
+            destination2.teamOneScore.text = [NSString stringWithFormat:@"%lu", [scores.teamOneScore.text integerValue]];
         }
     }
 }

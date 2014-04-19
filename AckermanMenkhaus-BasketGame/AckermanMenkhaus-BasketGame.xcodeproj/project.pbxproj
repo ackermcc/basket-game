@@ -26,6 +26,7 @@
 		F365D6F718EE103300018740 /* BasketSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F365D6F618EE103300018740 /* BasketSetupViewController.m */; };
 		F365D6FA18EE216A00018740 /* RoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F365D6F918EE216A00018740 /* RoundViewController.m */; };
 		F365D6FD18EE280F00018740 /* GamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F365D6FC18EE280F00018740 /* GamePlayViewController.m */; };
+		F3E0D43A1901FCAF0093DA62 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E0D4391901FCAF0093DA62 /* GameOverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		F365D6F918EE216A00018740 /* RoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundViewController.m; sourceTree = "<group>"; };
 		F365D6FB18EE280F00018740 /* GamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayViewController.h; sourceTree = "<group>"; };
 		F365D6FC18EE280F00018740 /* GamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayViewController.m; sourceTree = "<group>"; };
+		F3E0D4381901FCAF0093DA62 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		F3E0D4391901FCAF0093DA62 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				F365D68C18ECBFA600018740 /* AppDelegate.h */,
 				F365D68D18ECBFA600018740 /* AppDelegate.m */,
 				F365D68F18ECBFA600018740 /* Main.storyboard */,
+				F3E0D4381901FCAF0093DA62 /* GameOverViewController.h */,
+				F3E0D4391901FCAF0093DA62 /* GameOverViewController.m */,
 				F365D6FB18EE280F00018740 /* GamePlayViewController.h */,
 				F365D6FC18EE280F00018740 /* GamePlayViewController.m */,
 				F365D6F818EE216A00018740 /* RoundViewController.h */,
@@ -313,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E0D43A1901FCAF0093DA62 /* GameOverViewController.m in Sources */,
 				F365D6F718EE103300018740 /* BasketSetupViewController.m in Sources */,
 				F365D69418ECBFA600018740 /* ViewController.m in Sources */,
 				F365D6FD18EE280F00018740 /* GamePlayViewController.m in Sources */,
