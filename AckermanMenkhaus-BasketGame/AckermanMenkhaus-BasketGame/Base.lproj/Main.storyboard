@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="630" y="112"/>
         </scene>
-        <!--Round View Controller - Round 1-->
+        <!--Round View Controller - Catch Phrase-->
         <scene sceneID="zuK-xc-vby">
             <objects>
                 <viewController id="RHv-SZ-SHN" customClass="RoundViewController" sceneMemberID="viewController">
@@ -165,8 +165,8 @@
                                     <action selector="startGame:" destination="RHv-SZ-SHN" eventType="touchUpInside" id="3ac-co-AbV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blue Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIE-IW-NAt">
-                                <rect key="frame" x="78" y="169" width="165" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green Envy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIE-IW-NAt">
+                                <rect key="frame" x="78" y="169" width="165" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,7 +210,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.27450981740000002" green="0.74509805439999999" blue="0.62352943419999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Round 1" id="Cmo-Ku-3tZ"/>
+                    <navigationItem key="navigationItem" title="Catch Phrase" id="Cmo-Ku-3tZ"/>
                     <connections>
                         <outlet property="btnStartGame" destination="4e9-DS-lBX" id="3MT-U0-mEM"/>
                         <outlet property="roundDescription" destination="S2F-Xr-cSP" id="neY-on-jXb"/>
@@ -317,52 +317,83 @@
                         <outlet property="btnSkipWord" destination="8lj-vo-vZR" id="Ju2-Ya-rc2"/>
                         <outlet property="gameTimer" destination="68S-dN-g8e" id="QFq-Wz-a4N"/>
                         <segue destination="ZHB-6F-F5x" kind="unwind" identifier="returnToRound" unwindAction="unwindToRound:" id="Bxw-qw-dJB"/>
-                        <segue destination="TOM-n1-wnX" kind="push" identifier="gameOver" id="hdT-Wg-jp6"/>
+                        <segue destination="JmE-Vp-IzM" kind="push" identifier="gameOver" id="Qsz-hv-Nul"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zw-pY-XM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZHB-6F-F5x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1505" y="112"/>
+            <point key="canvasLocation" x="1516" y="112"/>
         </scene>
         <!--Game Over View Controller-->
-        <scene sceneID="940-1X-Bsg">
+        <scene sceneID="uVp-VZ-699">
             <objects>
-                <viewController id="TOM-n1-wnX" customClass="GameOverViewController" sceneMemberID="viewController">
+                <viewController id="JmE-Vp-IzM" customClass="GameOverViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5al-ty-Yr3"/>
-                        <viewControllerLayoutGuide type="bottom" id="KwM-y9-gli"/>
+                        <viewControllerLayoutGuide type="top" id="4na-p2-tUS"/>
+                        <viewControllerLayoutGuide type="bottom" id="xn4-2k-hOp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rkG-R4-fGM">
+                    <view key="view" contentMode="scaleToFill" id="d7l-0T-t8t">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwe-em-G6l">
-                                <rect key="frame" x="0.0" y="419" width="160" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="48"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2E-bs-hJo">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so7-kN-hys">
                                 <rect key="frame" x="160" y="419" width="160" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kob-eb-3l7">
+                                <rect key="frame" x="0.0" y="419" width="160" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wix-Uc-FdU">
+                                <rect key="frame" x="20" y="51" width="280" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvb-EI-4xs">
+                                <rect key="frame" x="90" y="229" width="140" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="play again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGame:" destination="JmE-Vp-IzM" eventType="touchUpInside" id="Esh-jr-hTp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNe-aj-YVN">
+                                <rect key="frame" x="114" y="300" width="92" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.78039222959999999" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yWh-RT-may"/>
+                    <navigationItem key="navigationItem" id="9WW-Vg-SVk"/>
                     <connections>
-                        <outlet property="teamOneScore" destination="Xwe-em-G6l" id="SWn-8j-lYF"/>
-                        <outlet property="teamTwoScore" destination="c2E-bs-hJo" id="ajB-k3-mJ0"/>
+                        <outlet property="btnShare" destination="DNe-aj-YVN" id="OuF-NX-yVT"/>
+                        <outlet property="playAgain" destination="xvb-EI-4xs" id="VBO-UW-xUp"/>
+                        <outlet property="teamOneFinalScore" destination="kob-eb-3l7" id="L42-uv-uYT"/>
+                        <outlet property="teamTwoFinalScore" destination="so7-kN-hys" id="a3F-P3-TLk"/>
+                        <outlet property="winningTeamName" destination="wix-Uc-FdU" id="CVs-Op-3hi"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sk1-HG-WyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VQ-sm-Dmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="112"/>
+            <point key="canvasLocation" x="1900" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iy5-pZ-Uxd">

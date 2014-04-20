@@ -30,14 +30,20 @@
     if (self.roundOver == YES) {
         self.gamePlayBasket = [self.basket mutableCopy];
         self.roundNumber ++;
-        self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
+        if (self.roundNumber == 2) {
+            self.navigationItem.title = @"Charades";
+        } else if (self.roundNumber == 3) {
+            self.navigationItem.title = @"Password";
+        }
+        
         
         self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
         if (self.roundNumber == 2) {
-            self.roundDescription.text = @"Use GENSTURES to describe the word or phrase";
+            self.roundDescription.text = @"Use GESTURES to describe the word or phrase";
         } else if (self.roundNumber == 3) {
             self.roundDescription.text = @"Use ONE WORD to describe the word or phrase";
         }
+        self.roundOver = NO;
     }
 }
 
@@ -65,7 +71,6 @@
     
     self.gamePlayBasket = [self.basket mutableCopy];
     self.roundNumber = 1;
-    self.navigationItem.title = [NSString stringWithFormat:@"Round %lu", (unsigned long)self.roundNumber];
     self.teamTwoScore.backgroundColor = [UIColor red];
     self.teamOneScore.backgroundColor = [UIColor teal];
     
@@ -73,9 +78,6 @@
     self.view.backgroundColor = [UIColor teal];
     
     self.firstOpen = YES;
-    
-#warning Remove before deployment
-    self.replaceArray = [[NSMutableArray alloc] initWithObjects:@"phone", @"kate", @"fire", @"chad", @"table", @"couch", @"tv", @"computer", @"twelve", @"eleven", @"chad is dumb", @"who brought her here", nil];
     
     self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
 }
@@ -92,6 +94,8 @@
     destination.basket = self.gamePlayBasket;
     destination.teamNumber = self.teamNumber.text;
     destination.roundNumber = self.roundNumber;
+    destination.teamOneScore = self.teamOneScore;
+    destination.teamTwoScore = self.teamTwoScore;
 }
 
 - (void)didReceiveMemoryWarning

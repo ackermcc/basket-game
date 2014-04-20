@@ -7,6 +7,7 @@
 //
 
 #import "GameOverViewController.h"
+#import "UIColor+BasketColors.h"
 
 @interface GameOverViewController ()
 
@@ -27,6 +28,30 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    self.teamOneFinalScore.text = self.teamOneScore;
+    self.teamTwoFinalScore.text = self.teamTwoScore;
+    
+    self.teamOneFinalScore.backgroundColor = [UIColor teal];
+    self.teamTwoFinalScore.backgroundColor = [UIColor red];
+    
+    [self.btnShare setBackgroundColor:[UIColor purple]];
+    
+    if ([self.teamOneScore integerValue] > [self.teamTwoScore integerValue]) {
+        self.view.backgroundColor = [UIColor teal];
+        [self.playAgain setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+        self.winningTeamName.text = @"Green Envy :)";
+    } else {
+        self.view.backgroundColor = [UIColor red];
+        [self.playAgain setTitleColor:[UIColor red] forState:UIControlStateNormal];
+        self.winningTeamName.text = @"Infra Red :)";
+    }
+}
+
+-(IBAction)newGame:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

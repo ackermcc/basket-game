@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface GameOverViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *teamOneScore;
-@property (weak, nonatomic) IBOutlet UILabel *teamTwoScore;
+@property (weak, nonatomic) IBOutlet UILabel *teamOneFinalScore;
+@property (weak, nonatomic) IBOutlet UILabel *teamTwoFinalScore;
+
+@property (nonatomic) NSString *teamOneScore;
+@property (nonatomic) NSString *teamTwoScore;
+
+@property (weak, nonatomic) IBOutlet UILabel *winningTeamName;
+@property (weak, nonatomic) IBOutlet UIButton *playAgain;
+@property (weak, nonatomic) IBOutlet UIButton *btnShare;
 
 @end

@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCorrectWord;
 @property (weak, nonatomic) IBOutlet UIButton *btnSkipWord;
 
+@property (weak, nonatomic) IBOutlet UILabel *teamOneScore;
+@property (weak, nonatomic) IBOutlet UILabel *teamTwoScore;
+
 
 @property (nonatomic) BOOL roundOver;
 @property (nonatomic) NSUInteger roundNumber;
