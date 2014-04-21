@@ -42,8 +42,10 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    BasketSetupViewController *destination = [segue destinationViewController];
-    destination.playerCount = self.playerCount;
+    if ([segue.identifier isEqualToString:@"beginGame"]){
+        BasketSetupViewController *destination = [segue destinationViewController];
+        destination.playerCount = self.playerCount;
+    }
 }
 
 @end

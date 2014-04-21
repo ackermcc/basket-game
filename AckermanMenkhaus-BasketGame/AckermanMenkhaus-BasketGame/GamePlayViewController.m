@@ -125,7 +125,7 @@
 }
 
 -(void) updateTimer {
-    float newProgress = [self.gameTimer progress] + 0.05;
+    float newProgress = [self.gameTimer progress] + 0.004166667;
     [self.gameTimer setProgress:newProgress animated:YES];
     
     if (newProgress >= 1.0) {
