@@ -233,7 +233,7 @@
 				ORGANIZATIONNAME = UC;
 				TargetAttributes = {
 					F365D67918ECBFA600018740 = {
-						DevelopmentTeam = 7569W9QRUY;
+						DevelopmentTeam = 42G3Y7YM5F;
 					};
 					F365D69A18ECBFA700018740 = {
 						TestTargetID = F365D67918ECBFA600018740;

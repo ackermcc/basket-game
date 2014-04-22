@@ -39,9 +39,9 @@
         
         self.wordsRemaining.text = [NSString stringWithFormat:@"Words remaining: %lu", (unsigned long)self.gamePlayBasket.count];
         if (self.roundNumber == 2) {
-            self.roundDescription.text = @"Use GESTURES to describe the word or phrase";
+            self.roundDescription.text = @"Describe the word or phrase using GESTURES";
         } else if (self.roundNumber == 3) {
-            self.roundDescription.text = @"Use ONE WORD to describe the word or phrase";
+            self.roundDescription.text = @"Describe the word or phrase using ONE WORD";
         }
         self.roundOver = NO;
     }
