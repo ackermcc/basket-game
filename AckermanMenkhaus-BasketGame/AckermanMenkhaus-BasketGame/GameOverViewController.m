@@ -50,6 +50,33 @@
     }
 }
 
+- (UIImage*)captureView:(UIView *)view
+{
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [view.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
+- (void)saveScreenshotToPhotosAlbum:(UIView *)view
+{
+    UIImageWriteToSavedPhotosAlbum([self captureView:self.view], nil, nil, nil);
+}
+
+-(IBAction)share:(id)sender {
+    NSMutableArray *shareItems = [[NSMutableArray alloc] init];
+    [shareItems addObject:[self captureView:self.view]];
+    [shareItems addObject:@"My team just won Basket! Play with your friends today and download in the App Store!"];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 -(IBAction)newGame:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

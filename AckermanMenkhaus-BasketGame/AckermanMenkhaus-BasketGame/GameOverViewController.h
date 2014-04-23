@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
+
 
 @interface GameOverViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *teamOneFinalScore;

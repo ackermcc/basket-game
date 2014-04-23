@@ -71,9 +71,39 @@
 }
 
 -(IBAction)nextPlayer:(id)sender{
-    [self.basket addObject:self.inputOne.text];
-    [self.basket addObject:self.inputTwo.text];
-    [self.basket addObject:self.inputThree.text];
+    
+    if ([self.inputOne.text isEqualToString:@""] || [self.inputTwo.text isEqualToString:@""] || [self.inputThree.text isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You have empty fields" message:@"You must fill in all items to pass to the next player" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];\
+        [alert show];
+    } else {
+        [self.basket addObject:self.inputOne.text];
+        [self.basket addObject:self.inputTwo.text];
+        [self.basket addObject:self.inputThree.text];
+        
+        self.inputOne.text = @"";
+        self.inputTwo.text = @"";
+        self.inputThree.text = @"";
+        
+        if (self.playerNumber < self.playerCount) {
+            self.playerNumber = self.playerNumber + 1;
+            self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
+            
+            if ([self.view.backgroundColor isEqual:[UIColor teal]]) {
+                [UIView animateWithDuration:0.5 animations:^(void){
+                    self.view.backgroundColor = [UIColor red];
+                    [self.btnNextPlayer setTitleColor:[UIColor red] forState:UIControlStateNormal];
+                }];
+            } else {
+                [UIView animateWithDuration:0.5 animations:^(void){
+                    self.view.backgroundColor = [UIColor teal];
+                    [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
+                }];
+            }
+            
+        } else {
+            [self performSegueWithIdentifier:@"beginRound" sender:self];
+        }
+    }
     
 //    [self.inputOne drop:^(void){
 //        [self.inputTwo drop:^(void){
@@ -83,31 +113,6 @@
 //        }];
 //    }];
     
-    self.inputOne.text = @"";
-    self.inputTwo.text = @"";
-    self.inputThree.text = @"";
-    
-    if (self.playerNumber < self.playerCount) {
-        self.playerNumber = self.playerNumber + 1;
-        self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
-        
-        if ([self.view.backgroundColor isEqual:[UIColor teal]]) {
-            [UIView animateWithDuration:0.5 animations:^(void){
-                self.view.backgroundColor = [UIColor red];
-                [self.btnNextPlayer setTitleColor:[UIColor red] forState:UIControlStateNormal];
-            }];
-        } else {
-            [UIView animateWithDuration:0.5 animations:^(void){
-                self.view.backgroundColor = [UIColor teal];
-                [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
-            }];
-        }
-        
-    } else {
-        [self performSegueWithIdentifier:@"beginRound" sender:self];
-    }
-    
-    NSLog(@"This is the basket: %@", self.basket);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

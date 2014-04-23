@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B674B167A294304ACEEAF4C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2F38A86268417FB836EB3C /* libPods.a */; };
+		F3639F6E190806B1003D5A24 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3639F6D190806B1003D5A24 /* Social.framework */; };
 		F364AF3418FB04E5004347D6 /* UIColor+BasketColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F364AF3318FB04E5004347D6 /* UIColor+BasketColors.m */; };
 		F365D67E18ECBFA600018740 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F365D67D18ECBFA600018740 /* Foundation.framework */; };
 		F365D68018ECBFA600018740 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F365D67F18ECBFA600018740 /* CoreGraphics.framework */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		7FF57DEDCBE0449789A4DEEB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BA2F38A86268417FB836EB3C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3639F6D190806B1003D5A24 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		F364AF3218FB04E5004347D6 /* UIColor+BasketColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BasketColors.h"; sourceTree = "<group>"; };
 		F364AF3318FB04E5004347D6 /* UIColor+BasketColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BasketColors.m"; sourceTree = "<group>"; };
 		F365D67A18ECBFA600018740 /* AckermanMenkhaus-BasketGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AckermanMenkhaus-BasketGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3639F6E190806B1003D5A24 /* Social.framework in Frameworks */,
 				F365D68018ECBFA600018740 /* CoreGraphics.framework in Frameworks */,
 				F365D68218ECBFA600018740 /* UIKit.framework in Frameworks */,
 				F365D67E18ECBFA600018740 /* Foundation.framework in Frameworks */,
@@ -121,6 +124,7 @@
 		F365D67C18ECBFA600018740 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3639F6D190806B1003D5A24 /* Social.framework */,
 				F365D67D18ECBFA600018740 /* Foundation.framework */,
 				F365D67F18ECBFA600018740 /* CoreGraphics.framework */,
 				F365D68118ECBFA600018740 /* UIKit.framework */,

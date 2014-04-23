@@ -663,7 +663,7 @@ Cg
             </objects>
             <point key="canvasLocation" x="1516" y="112"/>
         </scene>
-        <!--Game Over View Controller-->
+        <!--Game Over View Controller - Basket-->
         <scene sceneID="uVp-VZ-699">
             <objects>
                 <viewController id="JmE-Vp-IzM" customClass="GameOverViewController" sceneMemberID="viewController">
@@ -716,11 +716,14 @@ Cg
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="share:" destination="JmE-Vp-IzM" eventType="touchUpInside" id="pLe-tr-OLA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.78039222959999999" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9WW-Vg-SVk"/>
+                    <navigationItem key="navigationItem" title="Basket" id="9WW-Vg-SVk"/>
                     <connections>
                         <outlet property="btnShare" destination="DNe-aj-YVN" id="OuF-NX-yVT"/>
                         <outlet property="playAgain" destination="xvb-EI-4xs" id="VBO-UW-xUp"/>
