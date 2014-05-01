@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F365D67918ECBFA600018740"
-               BuildableName = "AckermanMenkhaus-BasketGame.app"
-               BlueprintName = "AckermanMenkhaus-BasketGame"
-               ReferencedContainer = "container:AckermanMenkhaus-BasketGame.xcodeproj">
+               BuildableName = "basket.app"
+               BlueprintName = "basket"
+               ReferencedContainer = "container:basket.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F365D69A18ECBFA700018740"
-               BuildableName = "AckermanMenkhaus-BasketGameTests.xctest"
-               BlueprintName = "AckermanMenkhaus-BasketGameTests"
-               ReferencedContainer = "container:AckermanMenkhaus-BasketGame.xcodeproj">
+               BuildableName = "basketTests.xctest"
+               BlueprintName = "basketTests"
+               ReferencedContainer = "container:basket.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F365D67918ECBFA600018740"
-            BuildableName = "AckermanMenkhaus-BasketGame.app"
-            BlueprintName = "AckermanMenkhaus-BasketGame"
-            ReferencedContainer = "container:AckermanMenkhaus-BasketGame.xcodeproj">
+            BuildableName = "basket.app"
+            BlueprintName = "basket"
+            ReferencedContainer = "container:basket.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F365D67918ECBFA600018740"
-            BuildableName = "AckermanMenkhaus-BasketGame.app"
-            BlueprintName = "AckermanMenkhaus-BasketGame"
-            ReferencedContainer = "container:AckermanMenkhaus-BasketGame.xcodeproj">
+            BuildableName = "basket.app"
+            BlueprintName = "basket"
+            ReferencedContainer = "container:basket.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F365D67918ECBFA600018740"
-            BuildableName = "AckermanMenkhaus-BasketGame.app"
-            BlueprintName = "AckermanMenkhaus-BasketGame"
-            ReferencedContainer = "container:AckermanMenkhaus-BasketGame.xcodeproj">
+            BuildableName = "basket.app"
+            BlueprintName = "basket"
+            ReferencedContainer = "container:basket.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
