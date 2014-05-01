@@ -54,6 +54,8 @@
     self.gameTimer.transform = transform;
     
     self.roundOver = NO;
+    
+    self.roundDescription.text = self.roundDirections;
 }
 
 - (void)shuffle:(NSMutableArray *)shuffleArray

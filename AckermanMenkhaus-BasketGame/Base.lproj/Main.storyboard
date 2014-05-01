@@ -591,7 +591,7 @@ Cg
                                     <action selector="correctWord:" destination="MMZ-XX-JMg" eventType="touchUpInside" id="xjM-y6-eZm"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Use WORDS to describe the word or phrase (no rhyming)" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UAC-y2-bAb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Use WORDS to describe the word or phrase (no rhyming)" translatesAutoresizingMaskIntoConstraints="NO" id="UAC-y2-bAb">
                                 <rect key="frame" x="20" y="38" width="280" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -629,6 +629,7 @@ Cg
                         <outlet property="btnCorrectWord" destination="45p-jl-8X6" id="SVp-0C-avV"/>
                         <outlet property="btnSkipWord" destination="8lj-vo-vZR" id="Ju2-Ya-rc2"/>
                         <outlet property="gameTimer" destination="68S-dN-g8e" id="QFq-Wz-a4N"/>
+                        <outlet property="roundDescription" destination="UAC-y2-bAb" id="HEy-Ci-SsE"/>
                         <segue destination="ZHB-6F-F5x" kind="unwind" identifier="returnToRound" unwindAction="unwindToRound:" id="Bxw-qw-dJB"/>
                         <segue destination="JmE-Vp-IzM" kind="push" identifier="gameOver" id="Qsz-hv-Nul"/>
                     </connections>

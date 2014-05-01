@@ -96,6 +96,7 @@
     destination.roundNumber = self.roundNumber;
     destination.teamOneScore = self.teamOneScore;
     destination.teamTwoScore = self.teamTwoScore;
+    destination.roundDirections = self.roundDescription.text;
 }
 
 - (void)didReceiveMemoryWarning

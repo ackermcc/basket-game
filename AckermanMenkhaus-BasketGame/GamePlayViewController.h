@@ -26,5 +26,7 @@
 @property (nonatomic) BOOL roundOver;
 @property (nonatomic) NSUInteger roundNumber;
 
+@property (nonatomic) NSString *roundDirections;
+@property (weak, nonatomic) IBOutlet UITextView *roundDescription;
 
 @end
