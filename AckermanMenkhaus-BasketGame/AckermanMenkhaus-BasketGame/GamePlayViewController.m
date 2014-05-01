@@ -155,14 +155,14 @@
             if ([self.correctAnswers count] == 0) {
                 destination.teamOneScore.text = @"00";
             } else {
-                destination.teamOneScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [self.teamOneScore.text integerValue]];
+                destination.teamOneScore.text = [NSString stringWithFormat:@"%u", [self.correctAnswers count] + [self.teamOneScore.text integerValue]];
             }
             destination.teamNumber.text = @"Infra Red";
         } else if ([self.teamNumber isEqualToString:@"Infra Red"]) {
             if ([self.correctAnswers count] == 0) {
                 destination.teamTwoScore.text = @"00";
             } else {
-                destination.teamTwoScore.text = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [self.teamTwoScore.text integerValue]];
+                destination.teamTwoScore.text = [NSString stringWithFormat:@"%u", [self.correctAnswers count] + [self.teamTwoScore.text integerValue]];
             }
             destination.teamNumber.text = @"Green Envy";
         }
@@ -174,12 +174,12 @@
         GameOverViewController *destination = [segue destinationViewController];
         
         if ([self.teamNumber isEqualToString:@"Green Envy"]) {
-            NSLog(@"i made it here with a score %lu", [self.correctAnswers count] + [self.teamOneScore.text integerValue]);
-            destination.teamOneScore = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [self.teamOneScore.text integerValue]];
+            NSLog(@"i made it here with a score %u", [self.correctAnswers count] + [self.teamOneScore.text integerValue]);
+            destination.teamOneScore = [NSString stringWithFormat:@"%u", [self.correctAnswers count] + [self.teamOneScore.text integerValue]];
             destination.teamTwoScore = self.teamTwoScore.text;
         } else {
-            NSLog(@"i made it here with a score %lu", [self.correctAnswers count] + [self.teamTwoScore.text integerValue]);
-            destination.teamTwoScore = [NSString stringWithFormat:@"%lu", [self.correctAnswers count] + [self.teamTwoScore.text integerValue]];
+            NSLog(@"i made it here with a score %u", [self.correctAnswers count] + [self.teamTwoScore.text integerValue]);
+            destination.teamTwoScore = [NSString stringWithFormat:@"%u", [self.correctAnswers count] + [self.teamTwoScore.text integerValue]];
             destination.teamOneScore = self.teamOneScore.text;
         }
     }

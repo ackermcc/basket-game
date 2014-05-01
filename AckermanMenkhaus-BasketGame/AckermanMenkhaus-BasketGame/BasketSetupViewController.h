@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface BasketSetupViewController : UIViewController <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *inputOne;
-@property (weak, nonatomic) IBOutlet UITextField *inputTwo;
-@property (weak, nonatomic) IBOutlet UITextField *inputThree;
+
+@property (nonatomic) IBOutlet UITextField *inputOne;
+@property (nonatomic) IBOutlet UITextField *inputTwo;
+@property (nonatomic) IBOutlet UITextField *inputThree;
 
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) NSMutableArray *basket;

@@ -26,6 +26,10 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,11 +50,39 @@
         [self.btnNextPlayer setTitleColor:[UIColor red] forState:UIControlStateNormal];
     }
     
-//    self.view.backgroundColor = [UIColor teal];
-//    [self.btnNextPlayer setTitleColor:[UIColor teal] forState:UIControlStateNormal];
-    
     self.playerNumber = 1;
     self.navigationItem.title = [NSString stringWithFormat:@"Player %ld", (long)self.playerNumber];
+    
+    self.inputOne = [[UITextField alloc] initWithFrame:CGRectMake(20.0, 78.0, 280.0, 45.0)];
+    [self.inputOne setBorderStyle:UITextBorderStyleNone];
+    [self.inputOne setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:20.0]];
+    [self.inputOne setTextAlignment:NSTextAlignmentCenter];
+    [self.inputOne setBackgroundColor:[UIColor whiteColor]];
+    [self.inputOne setPlaceholder:@"word, phrase, place, person"];
+    
+    self.inputTwo = [[UITextField alloc] initWithFrame:CGRectMake(20.0, 143.0, 280.0, 45.0)];
+    [self.inputTwo setBorderStyle:UITextBorderStyleNone];
+    [self.inputTwo setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:20.0]];
+    [self.inputTwo setTextAlignment:NSTextAlignmentCenter];
+    [self.inputTwo setBackgroundColor:[UIColor whiteColor]];
+    [self.inputTwo setPlaceholder:@"word, phrase, place, person"];
+    
+    self.inputThree = [[UITextField alloc] initWithFrame:CGRectMake(20.0, 208.0, 280.0, 45.0)];
+    [self.inputThree setBorderStyle:UITextBorderStyleNone];
+    [self.inputThree setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:20.0]];
+    [self.inputThree setTextAlignment:NSTextAlignmentCenter];
+    [self.inputThree setBackgroundColor:[UIColor whiteColor]];
+    [self.inputThree setPlaceholder:@"word, phrase, place, person"];
+    
+    [self.inputOne expandIntoView:self.view finished:^(void){
+        [self.inputTwo expandIntoView:self.view finished:^(void){
+            [self.inputThree expandIntoView:self.view finished:nil];
+        }];
+    }];
+    
+    self.inputOne.delegate = self;
+    self.inputTwo.delegate = self;
+    self.inputThree.delegate = self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -104,14 +136,6 @@
             [self performSegueWithIdentifier:@"beginRound" sender:self];
         }
     }
-    
-//    [self.inputOne drop:^(void){
-//        [self.inputTwo drop:^(void){
-//            [self.inputThree drop:^(void){
-//                
-//            }];
-//        }];
-//    }];
     
 }
 
