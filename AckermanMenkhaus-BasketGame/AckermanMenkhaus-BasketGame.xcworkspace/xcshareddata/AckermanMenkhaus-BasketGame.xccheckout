@@ -5,22 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8C75BF9E-0084-4CC2-8A4C-48EB8E6780DA</string>
+	<string>D6582CB0-C86D-4E57-81AA-7CCD70A839C3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>basket</string>
+	<string>AckermanMenkhaus-BasketGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5838F982-036F-4A89-8D33-B04937305A6D</key>
 		<string>https://github.com/ackermcc/basket-game.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>basket.xcodeproj/project.xcworkspace</string>
+	<string>AckermanMenkhaus-BasketGame/AckermanMenkhaus-BasketGame.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5838F982-036F-4A89-8D33-B04937305A6D</key>
 		<string>../..</string>
-		<key>7B40DF6D-EA0C-4FC2-A68E-BDBFE5562341</key>
-		<string>../../AckermanMenkhaus-BasketGame</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ackermcc/basket-game.git</string>
@@ -30,14 +28,6 @@
 	<string>5838F982-036F-4A89-8D33-B04937305A6D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7B40DF6D-EA0C-4FC2-A68E-BDBFE5562341</string>
-			<key>IDESourceControlWCCName</key>
-			<string>AckermanMenkhaus-BasketGame</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
